@@ -14,6 +14,11 @@ namespace v0617
     {
         int vx = rand.Next(-10,11);
         int vy = rand.Next(-10,11);
+        int va = rand.Next(-10, 11);
+        int vb = rand.Next(-10, 11);
+        int vc = rand.Next(-10, 11);
+        int vd = rand.Next(-10, 11);
+
         int score = 100;
         static Random rand = new Random();
 
@@ -21,8 +26,14 @@ namespace v0617
         {
             InitializeComponent();
 
-            label1.Left = rand.Next(ClientSize.Width-label1.Width/2);
-            label1.Top = rand.Next(ClientSize.Height-label1.Height/2);
+            label1.Left = rand.Next(ClientSize.Width-label1.Width);
+            label1.Top = rand.Next(ClientSize.Height-label1.Height);
+
+            label4.Left = rand.Next(ClientSize.Width - label1.Width);
+            label4.Top = rand.Next(ClientSize.Height - label1.Height);
+
+            label5.Left = rand.Next(ClientSize.Width - label1.Width);
+            label5.Top = rand.Next(ClientSize.Height - label1.Height);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -36,7 +47,10 @@ namespace v0617
             label1.Left += vx;
             label1.Top += vy;
 
-            if(label1.Left<0)
+            label4.Left += va;
+            label4.Top += vb;
+
+            if (label1.Left<0)
             {
                 vx = Math.Abs(vx);
             }
@@ -51,6 +65,46 @@ namespace v0617
             if(label1.Bottom>ClientSize.Height)
             {
                 vy = -Math.Abs(vy);
+            }
+
+            label4.Left += vx;
+            label4.Top += vy;
+
+            if (label4.Left < 0)
+            {
+                va = Math.Abs(va);
+            }
+            if (label4.Top < 0)
+            {
+                vb = Math.Abs(vb);
+            }
+            if (label4.Right > ClientSize.Width)
+            {
+                va = -Math.Abs(va);
+            }
+            if (label4.Bottom > ClientSize.Height)
+            {
+                vb = -Math.Abs(vb);
+            }
+
+            label5.Left += vx;
+            label5.Top += vy;
+
+            if (label5.Left < 0)
+            {
+                vc = Math.Abs(vc);
+            }
+            if (label5.Top < 0)
+            {
+                vd = Math.Abs(vd);
+            }
+            if (label5.Right > ClientSize.Width)
+            {
+                vc = -Math.Abs(vc);
+            }
+            if (label5.Bottom > ClientSize.Height)
+            {
+                vd = -Math.Abs(vd);
             }
 
             score--;
