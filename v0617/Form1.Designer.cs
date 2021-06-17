@@ -64,7 +64,7 @@ namespace v0617
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(622, 65);
+            this.label3.Location = new System.Drawing.Point(65, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 15);
             this.label3.TabIndex = 2;
